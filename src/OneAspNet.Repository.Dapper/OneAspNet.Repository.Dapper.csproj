@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Dianqing Bi</Authors>
+    <Description />
+    <PackageProjectUrl>https://github.com/bidianqing/oneaspnet.repository</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bidianqing/oneaspnet.repository</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>dapper</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

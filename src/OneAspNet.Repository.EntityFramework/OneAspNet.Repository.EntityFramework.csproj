@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Dianqing Bi</Authors>
+    <PackageProjectUrl>https://github.com/bidianqing/oneaspnet.repository</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bidianqing/oneaspnet.repository</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>ef core,ef</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

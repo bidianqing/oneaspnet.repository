@@ -9,7 +9,7 @@ namespace OneAspNet.Repository.Dapper
 {
     public class DapperRepository
     {
-        private readonly static Dictionary<DatabaseType, Type> dic = new Dictionary<DatabaseType, Type>
+        private readonly static Dictionary<DatabaseType, Type> _dic = new Dictionary<DatabaseType, Type>
         {
             [DatabaseType.SqlServer] = typeof(SqlConnection),
             [DatabaseType.MySql] = typeof(MySqlConnection)
@@ -26,7 +26,7 @@ namespace OneAspNet.Repository.Dapper
             }
 
             _options = optionsAccessor.Value;
-            Type type = dic[_options.DatabaseType];
+            Type type = _dic[_options.DatabaseType];
             Connection = Activator.CreateInstance(type) as IDbConnection;
             Connection.ConnectionString = _options.ConnectionString;
         }

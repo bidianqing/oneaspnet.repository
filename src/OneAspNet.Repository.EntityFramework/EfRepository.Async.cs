@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace OneAspNet.Repository.EntityFramework
 {
@@ -20,6 +21,12 @@ namespace OneAspNet.Repository.EntityFramework
         {
             return await _dbContext.Set<T>().FindAsync(id);
         }
+
+        public async Task<int> ExecuteSqlCommandAsync(string sql, params object[] parameters)
+        {
+            return await _dbContext.Database.ExecuteSqlCommandAsync(sql, parameters);
+        }
+
 
         public async Task<int> SaveChangesAsync()
         {

@@ -97,6 +97,17 @@ namespace OneAspNet.Repository.EntityFramework
             return temp;
         }
 
+        public IQueryable<T> FromSql(string sql, params object[] parameters)
+        {
+            return _dbContext.Set<T>().FromSql(sql, parameters);
+        }
+
+        public int ExecuteSqlCommand(string sql, params object[] parameters)
+        {
+            return _dbContext.Database.ExecuteSqlCommand(sql, parameters);
+        }
+
+
         public int SaveChanges()
         {
             return _dbContext.SaveChanges();
