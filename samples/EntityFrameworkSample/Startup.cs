@@ -24,8 +24,8 @@ namespace EntityFrameworkSample
             services.AddScoped(typeof(IEfRepository<>), typeof(SampleRepository<>));
             services.AddDbContextPool<SampleDbContext>(options =>
             {
-                // Install >> MySql.Data.EntityFrameworkCore
-                options.UseMySQL(Configuration.GetConnectionString("MySqlConnectionString"));
+                // Install >> Pomelo.EntityFrameworkCore.MySql
+                options.UseMySql(Configuration.GetConnectionString("MySqlConnectionString"));
 
                 //options.UseSqlServer(Configuration.GetConnectionString("SqlServerConnectionString"));
             });

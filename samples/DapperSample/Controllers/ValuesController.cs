@@ -21,7 +21,7 @@ namespace DapperSample.Controllers
         {
             using (DbConnection connection=_connectionFactory.CreateConnection())
             {
-                connection.Query<dynamic>("select * from [table]");
+                var userList = connection.Query<User>("select * from tb_user");
             }
 
             return new string[] { "value1", "value2" };
