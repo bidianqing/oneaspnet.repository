@@ -2,23 +2,28 @@
 using Microsoft.AspNetCore.Mvc;
 using OneAspNet.Repository.Dapper;
 using System.Collections.Generic;
+using System.Data.Common;
 
 namespace DapperSample.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private readonly DapperRepository _dapperRepository;
-        public ValuesController(DapperRepository dapperRepository)
+        private readonly ConnectionFactory _connectionFactory;
+        public ValuesController(ConnectionFactory connectionFactory)
         {
-            _dapperRepository = dapperRepository;
+            _connectionFactory = connectionFactory;
         }
 
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            _dapperRepository.Connection.Query<dynamic>("select * from [table]");
+            using (DbConnection connection=_connectionFactory.CreateConnection())
+            {
+                connection.Query<dynamic>("select * from [table]");
+            }
+
             return new string[] { "value1", "value2" };
         }
 

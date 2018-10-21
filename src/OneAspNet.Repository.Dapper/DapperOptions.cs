@@ -15,8 +15,18 @@
 
     public enum DatabaseType
     {
+        /// <summary>
+        /// 
+        /// </summary>
         SqlServer,
+        /// <summary>
+        /// Install >> MySql.Data
+        /// </summary>
         MySql,
+        /// <summary>
+        /// Install >> Microsoft.Data.Sqlite
+        /// </summary>
+        Sqlite
     }
 
 }

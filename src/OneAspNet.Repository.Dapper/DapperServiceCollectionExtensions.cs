@@ -19,7 +19,7 @@ namespace OneAspNet.Repository.Dapper
 
             services.AddOptions();
             services.Configure(setupAction);
-            services.AddScoped(typeof(DapperRepository));
+            services.AddScoped(typeof(ConnectionFactory));
 
             return services;
         }
