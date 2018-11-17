@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using System;
 using System.Data.Common;
 
@@ -8,14 +9,14 @@ namespace OneAspNet.Repository.Dapper
     {
         private readonly DapperOptions _options;
 
-        public ConnectionFactory(IOptionsMonitor<DapperOptions> optionsAccessor)
+        public ConnectionFactory(IOptionsSnapshot<DapperOptions> optionsAccessor)
         {
             if (optionsAccessor == null)
             {
                 throw new ArgumentNullException(nameof(optionsAccessor));
             }
 
-            _options = optionsAccessor.CurrentValue;
+            _options = optionsAccessor.Value;
         }
 
         public DbConnection CreateConnection()

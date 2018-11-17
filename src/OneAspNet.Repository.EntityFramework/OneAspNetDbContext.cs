@@ -8,6 +8,5 @@ namespace OneAspNet.Repository.EntityFramework
         {
 
         }
-
     }
 }

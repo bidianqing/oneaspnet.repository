@@ -13,8 +13,6 @@ namespace EntityFrameworkSample
         }
 
 
-        public virtual DbSet<User> User { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
@@ -27,7 +25,7 @@ namespace EntityFrameworkSample
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("tb_user");
+            builder.ToTable("tb_user").HasKey(u => u.Id);
         }
 
     }

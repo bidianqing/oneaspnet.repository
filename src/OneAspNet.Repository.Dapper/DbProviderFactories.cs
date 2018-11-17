@@ -9,7 +9,6 @@ namespace OneAspNet.Repository.Dapper
     {
         private static DbProviderFactory _sqlFactory = null;
         private static DbProviderFactory _mysqlFactory = null;
-        private static DbProviderFactory _npgsqlFactory = null;
         private static DbProviderFactory _sqliteFactory = null;
         private static ConcurrentDictionary<string, DbProviderFactory> _factories = new ConcurrentDictionary<string, DbProviderFactory>(StringComparer.OrdinalIgnoreCase);
 
@@ -33,14 +32,16 @@ namespace OneAspNet.Repository.Dapper
             {
                 if (_mysqlFactory == null)
                 {
-                    try
-                    {
-                        _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data");
-                    }
-                    catch
-                    {
-                        _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector");
-                    }
+                    //try
+                    //{
+                    //    _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data");
+                    //}
+                    //catch
+                    //{
+                    //    _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector");
+                    //}
+
+                    _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector");
                 }
                 return _mysqlFactory;
             }
@@ -52,15 +53,6 @@ namespace OneAspNet.Repository.Dapper
                     _sqlFactory = CreateFactory("System.Data.SqlClient.SqlClientFactory, System.Data.SqlClient");
                 }
                 return _sqlFactory;
-            }
-
-            if (string.Equals(providerName, "Npgsql", StringComparison.OrdinalIgnoreCase))
-            {
-                if (_npgsqlFactory == null)
-                {
-                    _npgsqlFactory = CreateFactory(" Npgsql.NpgsqlFactory, Npgsql");
-                }
-                return _npgsqlFactory;
             }
 
             if (string.Equals(providerName, "Sqlite", StringComparison.OrdinalIgnoreCase))

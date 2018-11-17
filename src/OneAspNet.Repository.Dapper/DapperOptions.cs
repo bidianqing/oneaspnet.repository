@@ -1,4 +1,4 @@
-﻿namespace OneAspNet.Repository.Dapper
+﻿namespace Microsoft.Extensions.DependencyInjection
 {
     public class DapperOptions
     {
@@ -20,7 +20,7 @@
         /// </summary>
         SqlServer,
         /// <summary>
-        /// Install >> MySql.Data
+        /// Install >> MySqlConnector
         /// </summary>
         MySql,
         /// <summary>

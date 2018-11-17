@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using OneAspNet.Repository.Dapper;
 using System;
 
-namespace OneAspNet.Repository.Dapper
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class DapperServiceCollectionExtensions
     {
