@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Dapper.Contrib.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using OneAspNet.Repository.Dapper;
 using System.Collections.Generic;
@@ -19,8 +20,13 @@ namespace DapperSample.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            using (DbConnection connection=_connectionFactory.CreateConnection())
+            using (DbConnection connection = _connectionFactory.CreateConnection())
             {
+                connection.Insert(new User
+                {
+                    Name = "bidianqing"
+                });
+
                 var userList = connection.Query<User>("select * from tb_user");
             }
 

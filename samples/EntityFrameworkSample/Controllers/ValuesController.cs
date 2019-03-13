@@ -18,7 +18,13 @@ namespace EntityFrameworkSample.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            var user = _userRepository.Find(1);
+            _userRepository.Add(new Domain.User
+            {
+                Name = "tom"
+            });
+            _userRepository.SaveChanges();
+
+            var user = _userRepository.Find(2);
             return new string[] { "value1", "value2" };
         }
 
