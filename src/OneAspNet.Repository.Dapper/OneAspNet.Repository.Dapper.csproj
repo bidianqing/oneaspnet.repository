@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/bidianqing/oneaspnet.repository</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>dapper</PackageTags>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

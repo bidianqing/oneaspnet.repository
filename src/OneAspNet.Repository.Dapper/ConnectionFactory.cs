@@ -9,14 +9,14 @@ namespace OneAspNet.Repository.Dapper
     {
         private readonly DapperOptions _options;
 
-        public ConnectionFactory(IOptionsSnapshot<DapperOptions> optionsAccessor)
+        public ConnectionFactory(IOptionsMonitor<DapperOptions> optionsAccessor)
         {
             if (optionsAccessor == null)
             {
                 throw new ArgumentNullException(nameof(optionsAccessor));
             }
 
-            _options = optionsAccessor.Value;
+            _options = optionsAccessor.CurrentValue;
         }
 
         public DbConnection CreateConnection()

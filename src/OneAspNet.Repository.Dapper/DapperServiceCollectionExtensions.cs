@@ -19,7 +19,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddOptions();
             services.Configure(setupAction);
-            services.AddScoped(typeof(ConnectionFactory));
+            services.AddSingleton(typeof(ConnectionFactory));
 
             return services;
         }
