@@ -82,6 +82,11 @@ namespace OneAspNet.Repository.EntityFramework
             return _dbContext.Set<T>().Where(whereLambda);
         }
 
+        public T FirstOrDefault(Expression<Func<T, bool>> whereLambda)
+        {
+            return _dbContext.Set<T>().FirstOrDefault(whereLambda);
+        }
+
         public IQueryable<T> Find<S>(int pageIndex, int pageSize, out int totalCount, Expression<Func<T, bool>> whereLambda, Expression<Func<T, S>> orderLambda, bool isAsc)
         {
             var temp = _dbContext.Set<T>().Where(whereLambda);

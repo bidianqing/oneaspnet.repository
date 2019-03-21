@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace OneAspNet.Repository.EntityFramework
@@ -20,6 +22,11 @@ namespace OneAspNet.Repository.EntityFramework
         public async Task<T> FindAsync(int id)
         {
             return await _dbContext.Set<T>().FindAsync(id);
+        }
+
+        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> whereLambda)
+        {
+            return await _dbContext.Set<T>().FirstOrDefaultAsync(whereLambda);
         }
 
         public async Task<int> ExecuteSqlCommandAsync(string sql, params object[] parameters)
