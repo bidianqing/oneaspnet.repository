@@ -17,8 +17,8 @@ namespace OneAspNet.Repository.Dapper
         /// </summary>
         /// <param name="providerName">        
         /// 数据库工厂类型, 需要引用对应的数据库client库, 
-        /// 已知工厂类型 MySql,SqlServer,Npgsql,Sqlite,
-        /// 未知类型使用全限定类型名，如（"MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data"）
+        /// 已知工厂类型 MySql,SqlServer,Sqlite,
+        /// 未知类型使用全限定类型名，如（"MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector"）
         /// </param>        
         /// <returns></returns>
         public static DbProviderFactory GetFactory(string providerName)
@@ -32,15 +32,6 @@ namespace OneAspNet.Repository.Dapper
             {
                 if (_mysqlFactory == null)
                 {
-                    //try
-                    //{
-                    //    _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data");
-                    //}
-                    //catch
-                    //{
-                    //    _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector");
-                    //}
-
                     _mysqlFactory = CreateFactory("MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector");
                 }
                 return _mysqlFactory;

@@ -22,10 +22,10 @@ namespace OneAspNet.Repository.Dapper
         public DbConnection CreateConnection()
         {
             DbProviderFactory dbProviderFactory = DbProviderFactories.GetFactory(_options.DatabaseType.ToString());
-            DbConnection dbConnection = dbProviderFactory.CreateConnection();
-            dbConnection.ConnectionString = _options.ConnectionString;
+            DbConnection connection = dbProviderFactory.CreateConnection();
+            connection.ConnectionString = _options.ConnectionString;
 
-            return dbConnection;
+            return connection;
         }
 
     }

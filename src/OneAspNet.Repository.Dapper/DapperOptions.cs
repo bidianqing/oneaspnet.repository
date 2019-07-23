@@ -16,7 +16,7 @@
     public enum DatabaseType
     {
         /// <summary>
-        /// 
+        /// Install >> Microsoft.Data.SqlClient
         /// </summary>
         SqlServer,
         /// <summary>
