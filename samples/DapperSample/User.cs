@@ -10,3 +10,6 @@ namespace DapperSample
         public string Name { get; set; }
     }
 }
+
+
+

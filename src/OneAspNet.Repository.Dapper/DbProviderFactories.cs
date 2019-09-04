@@ -21,7 +21,7 @@ namespace OneAspNet.Repository.Dapper
         {
             if (string.IsNullOrWhiteSpace(providerName))
             {
-                throw new ArgumentException("is null or empty", providerName);
+                throw new ArgumentException("is null or empty", nameof(providerName));
             }
 
             // https://andrewlock.net/making-getoradd-on-concurrentdictionary-thread-safe-using-lazy/
