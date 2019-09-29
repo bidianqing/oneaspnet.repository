@@ -25,15 +25,22 @@ namespace OneAspNet.Repository.Dapper
 
             _options = optionsAccessor.CurrentValue;
 
+#if NETSTANDARD2_1
             foreach (var item in _drives)
             {
-                DbProviderFactories.RegisterFactory(item.Key, item.Value);
+                System.Data.Common.DbProviderFactories.RegisterFactory(item.Key, item.Value);
             }
+#endif
         }
 
         public DbConnection CreateConnection()
         {
-            DbProviderFactory dbProviderFactory = DbProviderFactories.GetFactory(_options.DatabaseType.ToString());
+            DbProviderFactory dbProviderFactory = null;
+#if NETSTANDARD2_1
+            dbProviderFactory = System.Data.Common.DbProviderFactories.GetFactory(_options.DatabaseType.ToString());
+#else
+            dbProviderFactory = DbProviderFactories.GetFactory(_options.DatabaseType.ToString());
+#endif
             DbConnection connection = dbProviderFactory.CreateConnection();
             connection.ConnectionString = _options.ConnectionString;
 

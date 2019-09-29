@@ -1,19 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2002
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BF8B4102-0D22-4974-95FA-48520D6435C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{9057BB05-9938-4E47-8F31-97C07296C37A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneAspNet.Repository.Dapper", "src\OneAspNet.Repository.Dapper\OneAspNet.Repository.Dapper.csproj", "{39E6DAB4-0FC9-4900-9BB9-3F7AFE3731F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneAspNet.Repository.Dapper", "src\OneAspNet.Repository.Dapper\OneAspNet.Repository.Dapper.csproj", "{39E6DAB4-0FC9-4900-9BB9-3F7AFE3731F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneAspNet.Repository.EntityFramework", "src\OneAspNet.Repository.EntityFramework\OneAspNet.Repository.EntityFramework.csproj", "{4ECAF014-158A-47D0-AAA7-EE0688DC024D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneAspNet.Repository.EntityFramework", "src\OneAspNet.Repository.EntityFramework\OneAspNet.Repository.EntityFramework.csproj", "{4ECAF014-158A-47D0-AAA7-EE0688DC024D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperSample", "samples\DapperSample\DapperSample.csproj", "{EE2E98D5-E681-4626-BCB4-0F17F719EEFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperSample", "samples\DapperSample\DapperSample.csproj", "{EE2E98D5-E681-4626-BCB4-0F17F719EEFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkSample", "samples\EntityFrameworkSample\EntityFrameworkSample.csproj", "{23140F78-4DB8-42F3-B3B8-1D04FAA0650E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkSample", "samples\EntityFrameworkSample\EntityFrameworkSample.csproj", "{23140F78-4DB8-42F3-B3B8-1D04FAA0650E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "samples\Domain\Domain.csproj", "{71FDA4BB-D114-4C4B-B627-8183432153FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{23140F78-4DB8-42F3-B3B8-1D04FAA0650E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23140F78-4DB8-42F3-B3B8-1D04FAA0650E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23140F78-4DB8-42F3-B3B8-1D04FAA0650E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71FDA4BB-D114-4C4B-B627-8183432153FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FDA4BB-D114-4C4B-B627-8183432153FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71FDA4BB-D114-4C4B-B627-8183432153FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71FDA4BB-D114-4C4B-B627-8183432153FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{4ECAF014-158A-47D0-AAA7-EE0688DC024D} = {BF8B4102-0D22-4974-95FA-48520D6435C9}
 		{EE2E98D5-E681-4626-BCB4-0F17F719EEFE} = {9057BB05-9938-4E47-8F31-97C07296C37A}
 		{23140F78-4DB8-42F3-B3B8-1D04FAA0650E} = {9057BB05-9938-4E47-8F31-97C07296C37A}
+		{71FDA4BB-D114-4C4B-B627-8183432153FE} = {9057BB05-9938-4E47-8F31-97C07296C37A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EDD92ACF-07AA-4D9A-98AB-1019F95E84BE}
