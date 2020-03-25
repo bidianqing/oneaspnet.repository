@@ -14,6 +14,7 @@ namespace OneAspNet.Repository.Dapper
             { DatabaseType.MySql.ToString(),"MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector"},
             { DatabaseType.SqlServer.ToString(),"Microsoft.Data.SqlClient.SqlClientFactory, Microsoft.Data.SqlClient"},
             { DatabaseType.Sqlite.ToString(),"Microsoft.Data.Sqlite.SqliteFactory, Microsoft.Data.Sqlite"},
+            { DatabaseType.PostgreSql.ToString(),"Npgsql.NpgsqlFactory, Npgsql"}
         };
 
         public ConnectionFactory(IOptionsMonitor<DapperOptions> optionsAccessor)

@@ -26,7 +26,11 @@
         /// <summary>
         /// Install >> Microsoft.Data.Sqlite
         /// </summary>
-        Sqlite
+        Sqlite,
+        /// <summary>
+        /// Install >> Npgsql
+        /// </summary>
+        PostgreSql
     }
 
 }

@@ -15,6 +15,7 @@ namespace OneAspNet.Repository.Dapper
             { "MySql","MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector"},
             { "SqlServer","Microsoft.Data.SqlClient.SqlClientFactory, Microsoft.Data.SqlClient"},
             { "Sqlite","Microsoft.Data.Sqlite.SqliteFactory, Microsoft.Data.Sqlite"},
+            { "PostgreSql","Npgsql.NpgsqlFactory, Npgsql"},
         };
 
         public static DbProviderFactory GetFactory(string providerName)
