@@ -20,17 +20,15 @@ namespace DapperSample.Controllers
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            using (DbConnection connection = _connectionFactory.CreateConnection())
+            using DbConnection connection = _connectionFactory.CreateConnection();
+            connection.Insert(new User
             {
-                connection.Insert(new User
-                {
-                    Name = "bidianqing"
-                });
+                Name = "bidianqing"
+            });
 
-                var userList = connection.Query<User>("select * from tb_user");
+            var userList = connection.Query<User>("select * from tb_user");
 
-                return userList;
-            }
+            return userList;
         }
 
         // GET api/values/5
