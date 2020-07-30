@@ -11,7 +11,7 @@ namespace OneAspNet.Repository.Dapper
         private readonly DapperOptions _options;
         private static Dictionary<string, string> _drives = new Dictionary<string, string>()
         {
-            { DatabaseType.MySql.ToString(),"MySql.Data.MySqlClient.MySqlClientFactory, MySqlConnector"},
+            { DatabaseType.MySql.ToString(),"MySqlConnector.MySqlConnectorFactory, MySqlConnector"},
             { DatabaseType.SqlServer.ToString(),"Microsoft.Data.SqlClient.SqlClientFactory, Microsoft.Data.SqlClient"},
             { DatabaseType.Sqlite.ToString(),"Microsoft.Data.Sqlite.SqliteFactory, Microsoft.Data.Sqlite"},
             { DatabaseType.PostgreSql.ToString(),"Npgsql.NpgsqlFactory, Npgsql"}
