@@ -10,7 +10,7 @@ namespace OneAspNet.Repository.EntityFramework
         Task<T[]> AddRangeAsync(T[] entities);
         Task<T> FindAsync(int id);
         Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> whereLambda);
-        Task<int> ExecuteSqlCommandAsync(string sql, params object[] parameters);
+        Task<int> ExecuteSqlRawAsync(string sql, params object[] parameters);
         Task<int> SaveChangesAsync();
     }
 }

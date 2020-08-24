@@ -77,6 +77,7 @@ namespace OneAspNet.Repository.EntityFramework
         {
             return _dbContext.Set<T>().Find(id);
         }
+
         public IQueryable<T> Find(Expression<Func<T, bool>> whereLambda)
         {
             return _dbContext.Set<T>().Where(whereLambda);
@@ -102,14 +103,14 @@ namespace OneAspNet.Repository.EntityFramework
             return temp;
         }
 
-        public IQueryable<T> FromSql(string sql, params object[] parameters)
+        public IQueryable<T> FromSqlRaw(string sql, params object[] parameters)
         {
-            return _dbContext.Set<T>().FromSql(sql, parameters);
+            return _dbContext.Set<T>().FromSqlRaw(sql, parameters);
         }
 
-        public int ExecuteSqlCommand(string sql, params object[] parameters)
+        public int ExecuteSqlRaw(string sql, params object[] parameters)
         {
-            return _dbContext.Database.ExecuteSqlCommand(sql, parameters);
+            return _dbContext.Database.ExecuteSqlRaw(sql, parameters);
         }
 
 

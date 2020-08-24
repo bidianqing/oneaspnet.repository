@@ -17,8 +17,8 @@ namespace OneAspNet.Repository.EntityFramework
         IQueryable<T> Find(Expression<Func<T, bool>> whereLambda);
         IQueryable<T> Find<S>(int pageIndex, int pageSize, out int totalCount, Expression<Func<T, bool>> whereLambda, Expression<Func<T, S>> orderLambda, bool isAsc);
         T FirstOrDefault(Expression<Func<T, bool>> whereLambda);
-        IQueryable<T> FromSql(string sql, params object[] parameters);
-        int ExecuteSqlCommand(string sql, params object[] parameters);
+        IQueryable<T> FromSqlRaw(string sql, params object[] parameters);
+        int ExecuteSqlRaw(string sql, params object[] parameters);
         int SaveChanges();
     }
 }

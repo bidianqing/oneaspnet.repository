@@ -29,9 +29,9 @@ namespace OneAspNet.Repository.EntityFramework
             return await _dbContext.Set<T>().FirstOrDefaultAsync(whereLambda);
         }
 
-        public async Task<int> ExecuteSqlCommandAsync(string sql, params object[] parameters)
+        public async Task<int> ExecuteSqlRawAsync(string sql, params object[] parameters)
         {
-            return await _dbContext.Database.ExecuteSqlCommandAsync(sql, parameters);
+            return await _dbContext.Database.ExecuteSqlRawAsync(sql, parameters);
         }
 
 

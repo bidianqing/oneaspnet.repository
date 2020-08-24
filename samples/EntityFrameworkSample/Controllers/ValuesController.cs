@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using OneAspNet.Repository.EntityFramework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EntityFrameworkSample.Controllers
 {
@@ -9,22 +10,26 @@ namespace EntityFrameworkSample.Controllers
     public class ValuesController : Controller
     {
         private readonly IEfRepository<User> _userRepository;
-        public ValuesController(IEfRepository<User> userRepository)
+        private readonly SampleDbContext _context;
+        public ValuesController(IEfRepository<User> userRepository, SampleDbContext context)
         {
             _userRepository = userRepository;
+            _context = context;
         }
 
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            _userRepository.Add(new Domain.User
-            {
-                Name = "tom"
-            });
-            _userRepository.SaveChanges();
+            //_userRepository.Add(new Domain.User
+            //{
+            //    Name = "tom"
+            //});
+            //_userRepository.SaveChanges();
 
-            var user = _userRepository.Find(2);
+            //var user = _userRepository.Find(2);
+
+            var user = _context.Set<User>().SingleOrDefault(u => u.Id == 2);
             return new string[] { "value1", "value2" };
         }
 
