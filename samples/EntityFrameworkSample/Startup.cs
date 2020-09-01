@@ -28,6 +28,7 @@ namespace EntityFrameworkSample
                 // Install >> Pomelo.EntityFrameworkCore.MySql
                 options.UseMySql(Configuration.GetConnectionString("MySqlConnectionString"));
 
+                // Install >> Microsoft.EntityFrameworkCore.SqlServer
                 //options.UseSqlServer(Configuration.GetConnectionString("SqlServerConnectionString"));
             });
         }
