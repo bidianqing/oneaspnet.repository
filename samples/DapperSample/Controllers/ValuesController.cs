@@ -7,8 +7,9 @@ using System.Data.Common;
 
 namespace DapperSample.Controllers
 {
+    [ApiController]
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ValuesController : ControllerBase
     {
         private readonly ConnectionFactory _connectionFactory;
         public ValuesController(ConnectionFactory connectionFactory)
