@@ -9,13 +9,13 @@
     <RepositoryUrl>https://github.com/bidianqing/oneaspnet.repository</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>dapper</PackageTags>
-    <Version>3.1.10</Version>
+    <Version>5.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper.Contrib" Version="2.0.35" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.10" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
 
   </ItemGroup>
 
