@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using OneAspNet.Repository.Dapper;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Linq;
 
 namespace DapperSample.Controllers
 {
@@ -22,10 +23,21 @@ namespace DapperSample.Controllers
         public IEnumerable<User> Get()
         {
             using DbConnection connection = _connectionFactory.CreateConnection();
-            connection.Insert(new User
+
+            var user = new User
             {
                 Name = "bidianqing"
-            });
+            };
+
+            var users = new User[]
+            {
+                new User { Name = "1" },
+                new User { Name = "2" },
+                new User { Name = "3" },
+                new User { Name = "4" },
+            };
+
+            connection.Insert(users);
 
             var userList = connection.Query<User>("select * from tb_user");
 
@@ -41,13 +53,13 @@ namespace DapperSample.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody] string value)
         {
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] string value)
         {
         }
 

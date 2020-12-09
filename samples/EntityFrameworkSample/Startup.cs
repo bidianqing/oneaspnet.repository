@@ -31,6 +31,12 @@ namespace EntityFrameworkSample
                 // Install >> Microsoft.EntityFrameworkCore.SqlServer
                 //options.UseSqlServer(Configuration.GetConnectionString("SqlServerConnectionString"));
             });
+
+            services.AddDbContextFactory<SampleDbContext>(options =>
+            {
+                // Install >> Pomelo.EntityFrameworkCore.MySql
+                options.UseMySql(Configuration.GetConnectionString("MySqlConnectionString"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
