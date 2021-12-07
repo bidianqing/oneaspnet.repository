@@ -2,9 +2,7 @@
 using Dapper.Contrib.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using OneAspNet.Repository.Dapper;
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
 
 namespace DapperSample.Controllers
 {
