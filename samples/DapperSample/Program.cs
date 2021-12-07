@@ -1,20 +1,22 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+﻿
+var builder = WebApplication.CreateBuilder(args);
 
-namespace DapperSample
+// Add services to the container.
+
+builder.Services.AddControllers();
+
+builder.Services.AddDapper(options =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+    options.ConnectionString = builder.Configuration.GetConnectionString("MySqlConnectionString");
+    options.DatabaseType = DatabaseType.MySql;
+});
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
-}
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
